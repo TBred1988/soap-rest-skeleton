@@ -37,13 +37,11 @@
     </pluginRepositories>
 
     <dependencies>
-
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>jsr311-api</artifactId>
@@ -117,7 +115,6 @@
             <artifactId>tiles-el</artifactId>
             <version>${tiles.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
