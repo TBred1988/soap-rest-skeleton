@@ -1,0 +1,44 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+    <definition name="basic.taglibs" template="/WEB-INF/jsp/home/taglibs.jsp">
+    </definition>
+
+    <definition name="homepage.base" template="/WEB-INF/jsp/home/base.jsp">
+        <put-attribute name="taglibs" value="basic.taglibs" />
+        <put-attribute name="header" value="" />
+        <put-attribute name="title" value="" />
+        <put-attribute name="side" value="" />
+        <put-attribute name="footer" value="" />
+    </definition>
+
+    <!--<definition name="homepage.main" template="/WEB-INF/jsp/home/main.jsp" extends="homepage.base">-->
+    <definition name="homepage.main" extends="homepage.base">
+        <!--<put-attribute name="header" value="" />-->
+        <!--<put-attribute name="title" value="page.title.static" />-->
+        <put-attribute name="content" value="homepage.main.login-content" />
+        <!--<put-attribute name="footer" value="" /> -->
+    </definition>
+
+    <definition name="homepage.main.login-content" template="/WEB-INF/jsp/home/login-content.jsp">
+    </definition>
+
+    <definition name="homepage.main.list-content" template="/WEB-INF/jsp/home/list-content.jsp">
+        <put-attribute name="taglibs" value="basic.taglibs" />
+    </definition>
+
+    <definition name="homepage.main.show-content" template="/WEB-INF/jsp/home/user-main.jsp">
+    </definition>
+
+
+    <definition name="homepage.list" extends="homepage.base">
+        <put-attribute name="content" value="homepage.main.list-content" />
+    </definition>
+
+    <definition name="homepage.showone" extends="homepage.base">
+        <put-attribute name="content" value="homepage.main.show-content" />
+    </definition>
+
+</tiles-definitions>
+

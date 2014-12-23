@@ -1,0 +1,45 @@
+div.main-container {
+    background-color: #dodgerblue;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+div.loginbox {
+    background-color: dodgerblue;
+    color: white;
+    min-width: 300px;
+    width: 500px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #666666;
+    margin: 5px;
+    height: 150px;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+    vertical-align: center;
+}
+
+a.login-button{
+    height: 20px;
+    background-color: #666666;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+div.loginbox ul{
+    list-style-type: none;
+}
+
+div.loginbox ul li{
+    margin-top: 10px;
+    width: 100px;
+}
+
+div.loginbox ul li h2{
+    margin-top: 0;
+    margin-bottom: 0;
+}

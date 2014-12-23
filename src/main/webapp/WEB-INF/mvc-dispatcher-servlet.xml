@@ -11,18 +11,27 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
-    <bean id="tilesViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
         <!--Don't add suffix or prefix like you do with .jsp files-->
-        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+        <property name="viewClass">
+            <value>
+                org.springframework.web.servlet.view.tiles3.TilesView
+            </value>
+        </property>
+        <property name="order" value="0" />
+        <property name="requestContextAttribute" value="requestContext" />
     </bean>
 
-    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer" >
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions">
-            <value>/WEB-INF/apache-tiles.xml</value>
+            <list>
+                <value>/WEB-INF/tiles/apache-tiles.xml</value>
+            </list>
         </property>
     </bean>
 
     <context:component-scan base-package="com.example" />
     <mvc:annotation-driven/>
+    <!--<import resource="jpa-definitions.xml"/>-->
 
 </beans>

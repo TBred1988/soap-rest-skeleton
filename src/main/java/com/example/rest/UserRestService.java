@@ -1,25 +1,36 @@
-﻿package com.example.rest;
+package com.example.rest;
 
-/**
- * Created by Márta on 2014.07.26..
- */
+import com.example.controllers.business.UserService;
+import com.example.orm.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
+import javax.ws.rs.core.MediaType;
+
 
 @Path("/user-service/")
 @Produces({"application/xml","text/plain","text/html"})
 @Provider
+@Service
 public class UserRestService {
 
+    @Autowired
+    private UserService userService;
+
     @GET
-    @Path("/users/login/{userId}")
-    @Produces("text/plain")
-    public Response loginUser(@PathParam("userId") String userId){
-        System.out.println("called");
-        Response result = Response.ok("login").build();
-        return result;
+    @Path("/users/login/{email}/{password}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response loginUser(@PathParam("email") String email, @PathParam("password") String password){
+        String result = userService.getUserJson(password, email);
+        if(result != null) {
+            return Response.status(200).entity(result).build();
+        }else{
+            return Response.status(500).entity("Login problem with data").build();
+        }
     }
 
     @GET

@@ -33,4 +33,5 @@
         <servlet-name>mvc-dispatcher</servlet-name>
         <url-pattern>/web/*</url-pattern>
     </servlet-mapping>
+
 </web-app>
