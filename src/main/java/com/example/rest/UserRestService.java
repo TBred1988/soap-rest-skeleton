@@ -1,6 +1,7 @@
 package com.example.rest;
 
 import com.example.controllers.business.UserService;
+import com.example.orm.entities.UserPoint;
 import com.example.orm.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -50,4 +51,10 @@ public class UserRestService {
         return result;
     }
 
+    @GET
+    @Path("/users/points/{email}/{password}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public UserPoint getUserPoints(@PathParam("email") String email, @PathParam("password") String password){
+        return userService.getUserPoints(password, email);
+    }
 }

@@ -28,6 +28,7 @@
     <jaxrs:server id="services" address="/rest" >
         <jaxrs:serviceBeans>
             <ref bean="userRestService" />
+            <ref bean="itemsRestService" />
         </jaxrs:serviceBeans>
     </jaxrs:server>
 

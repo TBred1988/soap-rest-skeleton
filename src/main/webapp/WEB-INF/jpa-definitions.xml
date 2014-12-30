@@ -30,8 +30,6 @@
         <property name="password" value="postgres" />
     </bean>
 
-
-
     <tx:annotation-driven />
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
