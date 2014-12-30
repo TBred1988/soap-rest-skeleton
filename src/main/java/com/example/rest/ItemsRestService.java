@@ -27,7 +27,7 @@ public class ItemsRestService {
     @GET
     @Path("/items/list-all")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Items> loginUser(){
+    public List<Items> listItems(){
         return itemsService.getAllItems();
     }
 
