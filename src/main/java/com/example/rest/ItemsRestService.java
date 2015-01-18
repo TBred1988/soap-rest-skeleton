@@ -6,10 +6,7 @@ import com.example.orm.entities.Items;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
@@ -29,6 +26,14 @@ public class ItemsRestService {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Items> listItems(){
         return itemsService.getAllItems();
+    }
+
+    @POST
+    @Path("/items/create/{name}/{shortName}/{price}")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes({MediaType.APPLICATION_JSON})
+    public Boolean createItem(@PathParam("name") String name, @PathParam("price") Double price, @PathParam("shortName") String shortName){
+        return itemsService.createItem(name, price, shortName);
     }
 
 }

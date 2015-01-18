@@ -85,6 +85,10 @@ ul.options li.option-item{
     cursor: pointer;
 }
 
-a.close{
+a.close, .standard-button{
     cursor: pointer;
+}
+
+div#item-new{
+    display: none;
 }
