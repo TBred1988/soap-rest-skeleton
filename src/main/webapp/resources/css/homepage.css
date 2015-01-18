@@ -43,3 +43,48 @@ div.loginbox ul li h2{
     margin-top: 0;
     margin-bottom: 0;
 }
+
+.span-content{
+    position: relative;
+}
+
+#items-popup{
+    position: absolute;
+    display: none;
+    left: 120px;
+    top: 100px;
+    border: 1px solid;
+    background-color: lightgreen;
+}
+
+#items-container{
+    display: none;
+}
+
+#items-container ul{
+    padding: 15px;
+    border: 1px solid white;
+    background-color: khaki;
+    list-style-type: none;
+    margin: 10px;
+}
+
+#items-container ul li{
+    padding: 5px;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+#items-container ul li p{
+    padding: 0px;
+    margin: 0px;
+}
+
+ul.options li.option-item{
+    cursor: pointer;
+}
+
+a.close{
+    cursor: pointer;
+}
