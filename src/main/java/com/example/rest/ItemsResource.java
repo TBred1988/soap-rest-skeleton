@@ -16,7 +16,7 @@ import java.util.List;
 @Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML,MediaType.TEXT_PLAIN})
 @Provider
 @Service
-public class ItemsRestService {
+public class ItemsResource {
 
     @Autowired
     private ItemsService itemsService;

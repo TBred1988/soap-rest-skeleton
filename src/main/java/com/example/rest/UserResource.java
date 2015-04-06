@@ -17,7 +17,7 @@ import javax.ws.rs.core.MediaType;
 @Produces({"application/xml","text/plain","text/html"})
 @Provider
 @Service
-public class UserRestService {
+public class UserResource {
 
     @Autowired
     private UserService userService;

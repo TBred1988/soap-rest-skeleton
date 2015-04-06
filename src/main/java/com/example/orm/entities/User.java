@@ -1,6 +1,7 @@
 package com.example.orm.entities;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created by user on 2014.09.18..
@@ -8,6 +9,7 @@ import javax.persistence.*;
 
 @Table(name = "user",schema = "public")
 @Entity(name = "user")
+@XmlRootElement
 public class User {
 
 
