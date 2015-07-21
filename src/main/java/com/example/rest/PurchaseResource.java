@@ -25,7 +25,7 @@ public class PurchaseResource {
     private PurchaseService purchaseService;
 
     @POST
-    @Path("/purchase/create")
+    @Path("/purchase")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes({MediaType.APPLICATION_JSON})
     public Boolean doPurchase(String itemsJsonString) throws JSONException {
@@ -50,7 +50,7 @@ public class PurchaseResource {
     }
 
     @GET
-    @Path("/purchase/list-all")
+    @Path("/purchase")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Purchase> getAll(){
         return purchaseService.getAll();

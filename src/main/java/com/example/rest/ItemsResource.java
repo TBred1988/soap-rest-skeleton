@@ -22,14 +22,14 @@ public class ItemsResource {
     private ItemsService itemsService;
 
     @GET
-    @Path("/items/list-all")
+    @Path("/items")
     @Produces(MediaType.APPLICATION_JSON)
     public List<Items> listItems(){
         return itemsService.getAllItems();
     }
 
     @POST
-    @Path("/items/create/{name}/{shortName}/{price}")
+    @Path("/items/{name}/{shortName}/{price}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes({MediaType.APPLICATION_JSON})
     public Boolean createItem(@PathParam("name") String name, @PathParam("price") Double price, @PathParam("shortName") String shortName){

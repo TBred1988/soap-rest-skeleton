@@ -23,7 +23,7 @@ public class UserResource {
     private UserService userService;
 
     @GET
-    @Path("/users/login/{email}/{password}")
+    @Path("/users/{email}/{password}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response loginUser(@PathParam("email") String email, @PathParam("password") String password){
         String result = userService.getUserJson(password, email);

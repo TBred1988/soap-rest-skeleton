@@ -17,7 +17,7 @@ $(document).ready(function(){
 
     $('ul.options li.option-item a#show-items').click(function(){
         $.ajax({
-            url: "/services/rest/items-service/items/list-all",
+            url: "/services/rest/items-service/items",
             data: "",
             contentType : "application/json",
             dataType : "json",
@@ -62,7 +62,7 @@ $(document).ready(function(){
         var shortName = $('input[name=shortName]', form);
         var price = $('input[name=price_HU]', form);
         $.ajax({
-            url: "/services/rest/items-service/items/create/"+name.val()+"/"+shortName.val()+"/"+price.val()+"",
+            url: "/services/rest/items-service/items/"+name.val()+"/"+shortName.val()+"/"+price.val()+"",
             type: "POST",
             data: "",
             contentType : "application/json",
